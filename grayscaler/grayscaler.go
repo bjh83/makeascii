@@ -3,7 +3,6 @@ package grayscaler
 import(
 	"image"
 	"image/color"
-	"fmt"
 )
 
 const(
@@ -53,7 +52,6 @@ func average(oldPic *image.Gray) *Picture {
 					sum += int(oldPic.At(i, j).(color.Gray).Y)
 				}
 			}
-			fmt.Println("(", x, ", ", y, ")", "(", x / charWidth, ", ", y / charHeight, ")", newPic.Width, ", ", newPic.Height)
 			newPic.Set(x / charWidth, y / charHeight, uint8(sum / (charWidth * charHeight)))
 		}
 	}

@@ -14,7 +14,7 @@ func MakeAscii(picture *Picture) string {
 			} else if colorVal >= 128 {
 				out += "."
 			} else if colorVal >= 64 {
-				out += "O"
+				out += "o"
 			} else {
 				out += "#"
 			}

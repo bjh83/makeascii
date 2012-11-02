@@ -4,12 +4,23 @@ import(
 	"image/jpeg"
 	"os"
 	"fmt"
+	"regexp"
 	. "./grayscaler"
 	. "./asciizer"
 )
 
 func main() {
-	fileIn, errIn := os.Open(os.Args[1])
+	if len(os.Args) != 2 {
+		fmt.Println("Please select one picture to makeascii...")
+		return
+	}
+	fileName := os.Args[1]
+	result, _ := regexp.MatchString(".+\\.jpg", fileName)
+	if !result {
+		fmt.Println("Format of input is not supported...")
+		return
+	}
+	fileIn, errIn := os.Open(fileName)
 	if errIn != nil {
 		fmt.Println(errIn.Error())
 		return
