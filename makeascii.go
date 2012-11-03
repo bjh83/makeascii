@@ -2,6 +2,8 @@ package main
 
 import(
 	"image/jpeg"
+	"image/png"
+	"image"
 	"os"
 	"fmt"
 	"regexp"
@@ -15,20 +17,27 @@ func main() {
 		return
 	}
 	fileName := os.Args[1]
-	result, _ := regexp.MatchString(".+\\.jpg", fileName)
-	if !result {
-		fmt.Println("Format of input is not supported...")
-		return
-	}
+	isJpeg, _ := regexp.MatchString(".+\\.jpg", fileName)
+	isPng, _ := regexp.MatchString(".+\\.png", fileName)
+	var picture image.Image
+	var imageErr error
 	fileIn, errIn := os.Open(fileName)
 	if errIn != nil {
 		fmt.Println(errIn.Error())
 		return
 	}
-	pic, imageErr := jpeg.Decode(fileIn)
+	if isJpeg {
+		picture, imageErr = jpeg.Decode(fileIn)
+	} else if isPng {
+		picture, imageErr = png.Decode(fileIn)
+	} else {
+		fmt.Println("File type is not supported...")
+		return
+	}
 	if imageErr != nil {
 		fmt.Println(imageErr.Error())
+		return
 	}
-	fmt.Print(MakeAscii(GetImage(pic)))
+	fmt.Print(MakeAscii(GetImage(picture)))
 }
 

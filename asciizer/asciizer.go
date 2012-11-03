@@ -9,16 +9,20 @@ func MakeAscii(picture *Picture) string {
 	for y := 0; y < picture.Height; y++ {
 		for x := 0; x < picture.Width; x++ {
 			colorVal := picture.Get(x, y)
-			if colorVal >= 213 {
+			if colorVal >= 224 {
 				out += "#"
-			} else if colorVal >= 171 {
-				out += "="
+			} else if colorVal >= 192 {
+				out += "X"
+			} else if colorVal >= 160 {
+				out += "o"
 			} else if colorVal >= 128 {
-				out += "*"
-			} else if colorVal >= 85 {
+				out += "="
+			} else if colorVal >= 96 {
+				out += "+"
+			} else if colorVal >= 64 {
 				out += ":"
-			} else if colorVal >= 43 {
-				out += "."
+			} else if colorVal >= 32 {
+				out += "-"
 			} else {
 				out += " "
 			}
