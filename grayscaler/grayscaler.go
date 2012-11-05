@@ -3,6 +3,7 @@ package grayscaler
 import(
 	"image"
 	"image/color"
+	. "../lindatrast"
 )
 
 const(
@@ -36,7 +37,7 @@ func GetImage(pic image.Image) *Picture {
 			gray.Set(x, y, color)
 		}
 	}
-	return average(gray)
+	return average(Contrast(gray, 30))
 }
 
 func average(oldPic *image.Gray) *Picture {
