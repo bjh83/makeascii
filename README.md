@@ -10,4 +10,6 @@ Directory List
    to a format convenient for translation into ascii
  - asciizer: contains the code that actually generates the string that represents
    the image.
+ - contrastor: contains the code that adds contrast image to make them more
+   asciizable.
 
