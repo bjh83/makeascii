@@ -37,7 +37,7 @@ func GetImage(pic image.Image) *Picture {
 			gray.Set(x, y, color)
 		}
 	}
-	return average(Contrast(gray, 30))
+	return average(Contrast(gray, 25))
 }
 
 func average(oldPic *image.Gray) *Picture {
