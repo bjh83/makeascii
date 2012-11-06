@@ -1,4 +1,4 @@
-package lindatrast
+package contrastor
 
 import(
 	"image"

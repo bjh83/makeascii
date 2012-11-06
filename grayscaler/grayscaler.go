@@ -3,7 +3,7 @@ package grayscaler
 import(
 	"image"
 	"image/color"
-	. "../lindatrast"
+	. "../contrastor"
 )
 
 const(
