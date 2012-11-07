@@ -2,7 +2,7 @@ package grayscaler
 
 import(
 	"image"
-	. "../contrastor"
+	. "makeascii/contrastor"
 )
 
 func ConcurrentGetImage(pic image.Image) *Picture {

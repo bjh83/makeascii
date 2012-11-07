@@ -1,7 +1,7 @@
 package asciizer
 
 import(
-	. "../grayscaler"
+	. "makeascii/grayscaler"
 )
 
 func MakeAscii(picture *Picture) string {

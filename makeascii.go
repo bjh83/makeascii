@@ -7,8 +7,8 @@ import(
 	"os"
 	"fmt"
 	"regexp"
-	. "./grayscaler"
-	. "./asciizer"
+	. "makeascii/grayscaler"
+	. "makeascii/asciizer"
 )
 
 func main() {
